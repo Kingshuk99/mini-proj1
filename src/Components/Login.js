@@ -20,8 +20,8 @@ const Login = () => {
         const result = await response.json();
         setData(result);
     }
-    fetchData(`https://api.jsonbin.io/v3/b/66af322dacd3cb34a86faab8/user`, setUsers);
-    fetchData(`https://api.jsonbin.io/v3/b/66af322dacd3cb34a86faab8/admin`, setAdmins);
+    fetchData(`https://api.jsonbin.io/v3/b/66af322dacd3cb34a86faab8/record/user`, setUsers);
+    fetchData(`https://api.jsonbin.io/v3/b/66af322dacd3cb34a86faab8/record/admin`, setAdmins);
   }, [])
 
 
