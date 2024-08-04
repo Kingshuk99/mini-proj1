@@ -1,24 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React, { useEffect, useState, createContext } from "react";
+import Navbar from './Components/Navbar';
+import { BrowserRouter } from 'react-router-dom';
+export const SessionInfoContext = createContext();
 function App() {
+  const [sessionInfo, setSessionInfo] = useState(JSON.parse(localStorage.getItem('sessionInfo')));
+
+  useEffect(() => {
+    localStorage.setItem('sessionInfo', JSON.stringify(sessionInfo));
+  }, [sessionInfo])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <BrowserRouter>
+    <SessionInfoContext.Provider value={{sessionInfo, setSessionInfo}}>
+      <Navbar/>
+    </SessionInfoContext.Provider>
+    </BrowserRouter>
+    </>
   );
 }
 

@@ -1,0 +1,426 @@
+{
+  "admin": [
+    {
+      "id": "1",
+      "name": "Ajay Dutta",
+      "email": "ajay@gmail.com",
+      "mobile": "1234567890",
+      "password": "Ajay@1234",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "Vimal Sharma",
+      "email": "vimal@gmail.com",
+      "mobile": "1234567890",
+      "password": "Vimal@1234",
+      "role": "admin"
+    },
+    {
+      "id": "3",
+      "name": "canddy bronzoa",
+      "email": "candy@gmail.com",
+      "mobile": "7876543321",
+      "password": "candy1234",
+      "role": "admin"
+    },
+    {
+      "id": "4",
+      "name": "Kingshuk Sadhu",
+      "email": "kingshuk@gmail.com",
+      "mobile": "7876543321",
+      "password": "Kingshuk1234",
+      "role": "admin"
+    }
+  ],
+  "user": [
+    {
+      "id": "1",
+      "name": "Vijay Sharma",
+      "email": "vijay@gmail.com",
+      "mobile": "1234567890",
+      "password": "Vijay@1234",
+      "role": "user"
+    },
+    {
+      "id": "2",
+      "name": "Vijay Mallya",
+      "email": "vijay1@gmail.com",
+      "mobile": "1234567890",
+      "password": "Vijay@1234",
+      "role": "user"
+    },
+    {
+      "id": "4",
+      "name": "Amal Saha",
+      "email": "amal@gmail.com",
+      "mobile": "1234567890",
+      "password": "Amal@1234",
+      "role": "user"
+    },
+    {
+      "id": "5",
+      "name": "Koushik Sadhu",
+      "email": "koushik@gmail.com",
+      "mobile": "78765432",
+      "password": "Koushik12345",
+      "role": "user"
+    },
+    {
+      "id": "6",
+      "name": "Chandan Banerjee",
+      "email": "chandan@gmail.com",
+      "mobile": "8764562134",
+      "password": "chandan@123",
+      "role": "user"
+    }
+  ],
+  "pizza": [
+    {
+      "id": "2",
+      "name": "Spinach & blue cheese pizza",
+      "desc": "This vegetarian pizza is super-quick to make because the base is yeast free.",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7IZekSbbyslGkVwEG21QLqJzYyrJpHH0Wqw2cE_7upQ&s",
+      "price": 200
+    },
+    {
+      "id": "3",
+      "name": "BBQ chicken pizza",
+      "desc": "This is a recipe for classic BBQ chicken pizza with tangy BBQ sauce, chicken, and red onion.",
+      "image": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/2/28/1/FNM_040112-Copy-That-002_s4x3.jpg.rend.hgtvcom.616.462.suffix/1382541346030.jpeg",
+      "price": 300
+    }
+  ],
+  "burger": [
+    {
+      "id": "1",
+      "name": "Veg burger",
+      "desc": "The ultimate veggie burger you will love!",
+      "image": "https://www.vegrecipesofindia.com/wp-content/uploads/2020/12/burger-recipe-1.jpg",
+      "price": 100
+    },
+    {
+      "id": "2",
+      "name": "Non-veg burger",
+      "desc": "These burgers are loaded with tender & succulent chicken patties, dressed with a simple sauce.",
+      "image": "https://images.herzindagi.info/image/2019/Oct/wild-burger.jpg",
+      "price": 180
+    }
+  ],
+  "combo": [
+    {
+      "id": "1",
+      "name": "Veg combo",
+      "desc": "Explore dreamy dress's board \"veg combo\" on Pinterest.",
+      "image": "https://lh3.googleusercontent.com/cn1YPoaNawyrAexs9_E-Fg09IXI2O6XlqCR_GlLd3nBvCrFfjfCRONrxdF5EO_5uj29b4k8Ld_cY0tgeXScL0U24b4qow7Cnf94blL3U0A",
+      "price": 300
+    }
+  ],
+  "new_launch": [],
+  "beverage": [
+    {
+      "id": "1",
+      "name": "Drinks",
+      "desc": "All you need to prepare the simplest Pizza at home is all-purpose flour, dry yeast, warm water, onion, tomato, capsicum, and different kinds of cheese along with tomato",
+      "image": "https://www.lacademie.com/wp-content/uploads/2022/04/fruit-juices-drinks.jpg",
+      "price": 70
+    }
+  ],
+  "cart": [
+    {
+      "id": "1"
+    },
+    {
+      "id": "2"
+    },
+    {
+      "id": "4"
+    },
+    {
+      "id": "5"
+    },
+    {
+      "id": "6"
+    }
+  ],
+  "order": [
+    {
+      "id": "1",
+      "total": 450,
+      "pizza": [
+        {
+          "id": "1",
+          "name": "Pepperoni",
+          "count": 1
+        },
+        {
+          "id": "2",
+          "name": "Spinach & blue cheese pizza",
+          "count": 1
+        }
+      ],
+      "userId": "4",
+      "status": "Order Accepted!"
+    },
+    {
+      "id": "2",
+      "total": 350,
+      "pizza": [
+        {
+          "id": "1",
+          "name": "Pepperoni",
+          "count": 1
+        }
+      ],
+      "burger": [
+        {
+          "id": "1",
+          "name": "Veg burger",
+          "count": 1
+        }
+      ],
+      "userId": "4",
+      "status": "Order Accepted!"
+    },
+    {
+      "id": "3",
+      "total": 5200,
+      "pizza": [
+        {
+          "id": "1",
+          "name": "Pepperoni",
+          "count": 15
+        },
+        {
+          "id": "2",
+          "name": "Spinach & blue cheese pizza",
+          "count": 6
+        },
+        {
+          "id": "3",
+          "name": "BBQ chicken pizza",
+          "count": 3
+        },
+        {
+          "id": "4",
+          "name": "Rainbow pizzas",
+          "count": 1
+        }
+      ],
+      "userId": "5",
+      "status": "Order Accepted!"
+    },
+    {
+      "id": "4",
+      "total": 550,
+      "pizza": [
+        {
+          "id": "1",
+          "name": "Pepperoni",
+          "count": 1
+        },
+        {
+          "id": "2",
+          "name": "Spinach & blue cheese pizza",
+          "count": 1
+        }
+      ],
+      "burger": [
+        {
+          "id": "1",
+          "name": "Veg burger",
+          "count": 1
+        }
+      ],
+      "userId": "1",
+      "status": "Order Accepted!"
+    },
+    {
+      "id": "5",
+      "total": 700,
+      "pizza": [
+        {
+          "id": "1",
+          "name": "Pepperoni",
+          "count": 1
+        },
+        {
+          "id": "3",
+          "name": "BBQ chicken pizza",
+          "count": 1
+        },
+        {
+          "id": "4",
+          "name": "Rainbow pizzas",
+          "count": 1
+        }
+      ],
+      "userId": "1",
+      "status": "Order Accepted!"
+    },
+    {
+      "id": "6",
+      "total": 550,
+      "combo": [
+        {
+          "id": "1",
+          "name": "Veg combo",
+          "count": 1
+        }
+      ],
+      "pizza": [
+        {
+          "id": "1",
+          "name": "Pepperoni",
+          "count": 1
+        }
+      ],
+      "userId": "1",
+      "status": "Order Accepted!"
+    },
+    {
+      "id": "7",
+      "total": 2250,
+      "pizza": [
+        {
+          "id": "1",
+          "name": "Pepperoni",
+          "count": 1
+        }
+      ],
+      "userId": "1",
+      "status": "Order Accepted!"
+    },
+    {
+      "id": "8",
+      "total": 400,
+      "burger": [
+        {
+          "id": "1",
+          "name": "Veg burger",
+          "count": 0
+        }
+      ],
+      "combo": [
+        {
+          "id": "1",
+          "name": "Veg combo",
+          "count": 1
+        }
+      ],
+      "userId": "1",
+      "status": "Order Accepted!"
+    },
+    {
+      "id": "9",
+      "total": 500,
+      "pizza": [
+        {
+          "id": "1",
+          "name": "Pepperoni",
+          "count": 0
+        }
+      ],
+      "userId": "1",
+      "status": "Order Accepted!"
+    },
+    {
+      "id": "10",
+      "total": 1050,
+      "pizza": [
+        {
+          "id": "1",
+          "name": "Pepperoni",
+          "price": 250,
+          "count": 1
+        },
+        {
+          "id": "3",
+          "name": "BBQ chicken pizza",
+          "price": 300,
+          "count": 1
+        },
+        {
+          "id": "2",
+          "name": "Spinach & blue cheese pizza",
+          "price": 200,
+          "count": 1
+        }
+      ],
+      "combo": [
+        {
+          "id": "1",
+          "name": "Veg combo",
+          "price": 300,
+          "count": 1
+        }
+      ],
+      "userId": "1",
+      "status": "Order Accepted!"
+    },
+    {
+      "id": "11",
+      "total": 870,
+      "pizza": [
+        {
+          "id": "1",
+          "name": "Pepperoni",
+          "price": 250,
+          "count": 2
+        },
+        {
+          "id": "2",
+          "name": "Spinach & blue cheese pizza",
+          "price": 200,
+          "count": 0
+        }
+      ],
+      "combo": [
+        {
+          "id": "1",
+          "name": "Veg combo",
+          "price": 300,
+          "count": 1
+        }
+      ],
+      "beverage": [
+        {
+          "id": "1",
+          "name": "Drinks",
+          "price": 70,
+          "count": 1
+        }
+      ],
+      "userId": "5",
+      "status": "Order Accepted!"
+    },
+    {
+      "id": "12",
+      "total": 250,
+      "pizza": [
+        {
+          "id": "1",
+          "name": "Pepperoni",
+          "price": 250,
+          "count": 1
+        }
+      ],
+      "userId": "5",
+      "status": "Order placed!"
+    },
+    {
+      "id": "13",
+      "total": 300,
+      "burger": [
+        {
+          "id": "1",
+          "name": "Veg burger",
+          "price": 100,
+          "count": 3
+        }
+      ],
+      "userId": "5",
+      "status": "Order placed!"
+    }
+  ]
+}
