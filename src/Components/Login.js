@@ -5,6 +5,8 @@ import './style.css';
 import { SessionInfoContext } from "../App";
 import { useNavigate } from "react-router-dom";  //redirect
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 const Login = () => {
   const [role, setRole] = useState('user');
   const [loginSuccess, setLoginSuccess] = useState(null);
@@ -20,8 +22,8 @@ const Login = () => {
         const result = await response.json();
         setData(result);
     }
-    fetchData(`https://pizza-store-json-server.onrender.com/user`, setUsers);
-    fetchData(`https://pizza-store-json-server.onrender.com/admin`, setAdmins);
+    fetchData(`${backendUrl}/user`, setUsers);
+    fetchData(`${backendUrl}/admin`, setAdmins);
   }, [])
 
 
