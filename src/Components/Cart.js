@@ -3,6 +3,8 @@ import { SessionInfoContext } from "../App";
 import { createPortal }  from 'react-dom';
 import Popup from './Popup';
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 const Cart = () => {
     const [cart, setCart] = useState({});  //jst for a single crt
     const [orders, setOrders] = useState([]);
@@ -14,7 +16,7 @@ const Cart = () => {
             if(!sessionInfo) {
                 return;
             }
-            const response = await fetch(`http://localhost:3030/cart/${sessionInfo.id}`);
+            const response = await fetch(`${backendUrl}/cart/${sessionInfo.id}`);
             const result = await response.json();
             setCart(result);
         }
@@ -23,7 +25,7 @@ const Cart = () => {
 
     useEffect(() => {
         const fetchOrders = async () => {
-            const response = await fetch(`http://localhost:3030/order`);
+            const response = await fetch(`${backendUrl}/order`);
             const result = await response.json();
             setOrders(result);
         }
@@ -35,7 +37,7 @@ const Cart = () => {
         const newItem = cart[itemName].filter(item => item.id===itemId)[0];
         newItem.count = newItem.count+1;
         newCart.total += newItem.price;
-        const response = await fetch(`http://localhost:3030/cart/${sessionInfo.id}`, {
+        const response = await fetch(`${backendUrl}/cart/${sessionInfo.id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +53,7 @@ const Cart = () => {
         const newItem = cart[itemName].filter(item => item.id===itemId)[0];
         newItem.count = newItem.count-1;
         newCart.total -= newItem.price;
-        const response = await fetch(`http://localhost:3030/cart/${sessionInfo.id}`, {
+        const response = await fetch(`${backendUrl}/cart/${sessionInfo.id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -65,7 +67,7 @@ const Cart = () => {
     const payAndOrder = async() => {
         const deleteCart = async() => {
             const newCart = {id: cart.id};
-            const response = await fetch(`http://localhost:3030/cart/${sessionInfo.id}`, {
+            const response = await fetch(`${backendUrl}/cart/${sessionInfo.id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -82,7 +84,7 @@ const Cart = () => {
         newOrder.userId = cart.id;
         newOrder.status = "Order placed!";
 
-        const response = await fetch(`http://localhost:3030/order`, {
+        const response = await fetch(`${backendUrl}/order`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
