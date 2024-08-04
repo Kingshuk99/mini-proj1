@@ -2,6 +2,8 @@ import React, {useState, useEffect} from "react"
 import { Formik , Form , Field , ErrorMessage} from 'formik'
 import * as Yup from 'yup'
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 const Register = () => {
   const [role, setRole] = useState('user');
   const [admins, setAdmins] = useState([]);
@@ -14,9 +16,9 @@ const Register = () => {
         const result = await response.json();
         setData(result);
     }
-    fetchData(`http://localhost:3030/user`, setUsers);
-    fetchData(`http://localhost:3030/admin`, setAdmins);
-    fetchData(`http://localhost:3030/cart`, setCarts);
+    fetchData(`${backendUrl}/user`, setUsers);
+    fetchData(`${backendUrl}/admin`, setAdmins);
+    fetchData(`${backendUrl}/cart`, setCarts);
   }, [])
 
   const addAccount = async(accountData) => {
@@ -37,8 +39,8 @@ const Register = () => {
         }
     }
 
-    role==='user'?add(users, `http://localhost:3030/user`, setUsers)
-    :add(admins, `http://localhost:3030/admin`, setAdmins);
+    role==='user'?add(users, `${backendUrl}/user`, setUsers)
+    :add(admins, `${backendUrl}/admin`, setAdmins);
   }
 
   const handleChange = () => {
@@ -52,7 +54,7 @@ const Register = () => {
 
   const createCart = async (cartId) => {
     const newCart = {id: cartId};
-    const response = await fetch(`http://localhost:3030/cart`, {
+    const response = await fetch(`${backendUrl}/cart`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
