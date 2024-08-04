@@ -4,13 +4,15 @@ import { SessionInfoContext } from "../App";
 import AddItem from './AddItem';
 import ItemDetails from "./ItemDetails";
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 const ItemList = ({itemName}) => {
     const [items, setItems] = useState([]);
     const [cart, setCart] = useState({});
     const sessionInfo = useContext(SessionInfoContext).sessionInfo;
 
     const deleteItem = async (id) => {
-        fetch(`http://localhost:3030/${itemName}/${id}`, {
+        fetch(`${backendUrl}/${itemName}/${id}`, {
             method: 'DELETE'
         });
         setItems(items.filter(item => item.id!==id));
@@ -18,7 +20,7 @@ const ItemList = ({itemName}) => {
 
     useEffect(() => {
         const fetchItems = async () => {
-            const response = await fetch(`http://localhost:3030/${itemName}`);
+            const response = await fetch(`${backendUrl}/${itemName}`);
             const result = await response.json();
             setItems(result);
         }
@@ -27,7 +29,7 @@ const ItemList = ({itemName}) => {
 
     useEffect(() => {
         const fetchCart = async (id) => {
-            const response = await fetch(`http://localhost:3030/cart/${sessionInfo.id}`);
+            const response = await fetch(`${backendUrl}/cart/${sessionInfo.id}`);
             const result = await response.json();
             setCart(result);
         }
@@ -37,7 +39,7 @@ const ItemList = ({itemName}) => {
     const addItem = async (itemData) => {
         const maxId = items.length > 0 ? Math.max(...items.map(item=>item.id)):0;
         const newItem = {...itemData, id: JSON.stringify(maxId+1)}
-        const response = await fetch(`http://localhost:3030/${itemName}`, {
+        const response = await fetch(`${backendUrl}/${itemName}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -70,7 +72,7 @@ const ItemList = ({itemName}) => {
             newCart[itemName] = [...tempItems, {id: itemId, name: itemType, price: itemPrice, count: item.count+1}]
         }
         newCart.total = newCart.total+itemPrice;
-        const response = await fetch(`http://localhost:3030/cart/${sessionInfo.id}`, {
+        const response = await fetch(`${backendUrl}/cart/${sessionInfo.id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
