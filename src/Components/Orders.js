@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useContext } from "react";
 import { SessionInfoContext } from "../App";
+
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 const Orders = () => {
     const [orders, setOrders] = useState([]);
     const sessionInfo = useContext(SessionInfoContext).sessionInfo;
 
     useEffect(() => {
         const fetchOrders = async () => {
-            const response = await fetch(`http://localhost:3030/order`);
+            const response = await fetch(`${backendUrl}/order`);
             const result = await response.json();
             setOrders(result);
         }
@@ -16,7 +19,7 @@ const Orders = () => {
     const acceptOrder = async(id) => {
         const acceptedOrder = {...orders.filter(order => order.id===id)[0]};
         acceptedOrder.status = "Order Accepted!";
-        const response = await fetch(`http://localhost:3030/order/${id}`, {
+        const response = await fetch(`${backendUrl}/order/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
